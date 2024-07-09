@@ -1,6 +1,6 @@
-//test//asyc.js
+//test//async.js
 
-const { useFetcher } = require("react-router-dom");
+
 
 //how we can perform on async function
 function fetchData(callback){
