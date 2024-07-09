@@ -1,10 +1,11 @@
+
 const express=require('express');
 const mongoose=require('mongoose');
-const cors = require('cors')//import cors
 const {ApolloServer,gql}=require('apollo-server-express');
 const typeDefs = require('./schema');
 const resolvers=require('./resolvers');
 const userApiFromRouter=require('./routes/userRoutes');
+const cors=require('cors');
 
 
 const app=express();
@@ -13,7 +14,8 @@ const port= 3001;
 const url='mongodb+srv://sriramyagnapriya25:22761A05C0@cluster0.p2mwle5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 app.use(express.json());
 mongoose.connect(url,{useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{console.log('DB Connected')})
-.catch((err)=>{console.log(err)});
+.catch((err)=>{confirm.log(err)});
+
 //start my apollo server 
 const server = new ApolloServer({typeDefs,resolvers});
 app.use('/users',userApiFromRouter);
@@ -24,12 +26,6 @@ async function StartServer(){
         console.log(`server live 3001`);
     })
 }
-function Testing(){
-    return 1;
-}
-function Test2(){
-    return false;
-}
-Testing();
-Test2();
+
 StartServer();
+module.exports=app;
