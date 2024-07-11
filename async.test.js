@@ -19,7 +19,7 @@ test('callback Data',done=>{
 test('Mocking callback function',done=>{
     const MockFunction = jest.fn(data=>{
         expect(data).toBe('admin');
-        console.log('Mock Function');
+        //console.log('Mock Function');
         done();
     })
     fetchData(MockFunction);
