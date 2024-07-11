@@ -1,5 +1,5 @@
 
-const express=require('express');
+ const express=require('express');
 const mongoose=require('mongoose');
 const {ApolloServer,gql}=require('apollo-server-express');
 const typeDefs = require('./schema');
@@ -11,8 +11,7 @@ const cors=require('cors');
 const app=express();
 app.use(cors());
 const port= 3001;
-const url='mongodb+srv://sriramyagnapriya25:22761A05C0@cluster0.p2mwle5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
-app.use(express.json());
+const url = 'mongodb+srv://sriramyagnapriya25:22761A05C0@cluster0.p2mwle5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 mongoose.connect(url,{useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{console.log('DB Connected')})
 .catch((err)=>{console.log(err)});
 
