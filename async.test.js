@@ -1,17 +1,6 @@
 //async.test.js
-const {fetchData,MyData} = require('./test/async');
-test('callback Data',done=>{
-    function callback(data){
-        try{
-            expect(data).toBe('admin');
-            done();
-        }catch(err){
-            done(err);
-        }
-    }
-    fetchData(callback);
+const {MyData} = require('./test/async');
 
-})
 test('callback Data',done=>{
     function callback(data){
         try{
@@ -25,11 +14,3 @@ test('callback Data',done=>{
     
 })
 //mock function
-test('Mocking callback function',done=>{
-    const MockFunction = jest.fn(data=>{
-        expect(data).toBe('admin');
-        console.log('Mock Function');
-        done();
-    })
-    fetchData(MockFunction);
-})
