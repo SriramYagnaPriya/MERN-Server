@@ -14,4 +14,4 @@ function MyData(callback){
     },3000)
 }
 //calls admin after 4 seconds
-module.exports = {fetchData,MyData};
+module.exports = {MyData};
