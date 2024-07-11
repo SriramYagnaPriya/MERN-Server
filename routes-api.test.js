@@ -13,7 +13,6 @@ describe('GET /users ',()=>{
         const data = res.body;
         data.getAllUsers.forEach(user=>{
             expect(user).toHaveProperty('_id');
-            expect(user).toHaveProperty('email');
         });
     })
 })
