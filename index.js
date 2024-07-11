@@ -14,7 +14,7 @@ const port= 3001;
 const url='mongodb+srv://sriramyagnapriya25:22761A05C0@cluster0.p2mwle5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 app.use(express.json());
 mongoose.connect(url,{useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{console.log('DB Connected')})
-.catch((err)=>{confirm.log(err)});
+.catch((err)=>{console.log(err)});
 
 //start my apollo server 
 const server = new ApolloServer({typeDefs,resolvers});
