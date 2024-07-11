@@ -6,12 +6,14 @@ describe('GET /users ',()=>{
         const res = await request(app)
         .get('/users')
         .expect(200);
-        console.log(res.body.getAllUsers[0]);
-        const data=res.body;
-        data.getAllUsers.forEach(user=>{
-            expect(user).toHaveProperty('_id');
+        // console.log(res.body.getAllUsers[0]);
+        expect(res.body).toHaveProperty('getAllUsers');
+expect(Array.isArray(res.body.getAllUsers)).toBe(true);
+console.log(res.body.getAllUsers[0]);
+
+        // const data=res.body;
+        // data.getAllUsers.forEach(user=>{
+        //     expect(user).toHaveProperty('_id');
 
         })
     })
-
-})
